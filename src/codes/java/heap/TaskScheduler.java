@@ -41,6 +41,7 @@ public class TaskScheduler {
             if(maxHeap.isEmpty())
                 break;
 
+            //After checking size of maxHeap, because if maxheap is empty we dont any more time
             if(slot > 0)
                 totalInterval += slot;
         }

@@ -1,4 +1,4 @@
-package codes.java.dp;
+package codes.java.dp.string;
 
 
 //LCS of S and reverse(S);
