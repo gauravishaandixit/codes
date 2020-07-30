@@ -52,6 +52,7 @@ public class NextLargestPermutation {
         new NextLargestPermutation().printArray(ans);
 
         arr = new int[]{3, 4, 2, 8, 10, 7, 6};
+        //i = 8, j = 10, swap i and j then reverse i + 1
         ans = new NextLargestPermutation().nextPermutation(arr);
         new NextLargestPermutation().printArray(ans);
 

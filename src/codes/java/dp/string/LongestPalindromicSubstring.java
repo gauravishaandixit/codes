@@ -53,7 +53,7 @@ public class LongestPalindromicSubstring {
         {
             for(int j = i; j < n; j++)
             {
-                T[i][j]  = s.charAt(i) == s.charAt(j) && (j - i <= 2 || T[i + i][j - 1]);
+                T[i][j]  = s.charAt(i) == s.charAt(j) && (j - i <= 2 || T[i + 1][j - 1]);
 
                 if(T[i][j] && maxLen < (j - i + 1))
                 {
@@ -68,6 +68,7 @@ public class LongestPalindromicSubstring {
 
     public static void main(String[] args)
     {
+        System.out.println(new LongestPalindromicSubstring().lpss1("aaaabaa"));
         System.out.println(new LongestPalindromicSubstring().lpss1("efgabcba"));
         System.out.println(new LongestPalindromicSubstring().lpss1("mnopomn"));
         System.out.println(new LongestPalindromicSubstring().lpss1("abcde"));
@@ -76,6 +77,7 @@ public class LongestPalindromicSubstring {
 
         System.out.println("\n");
 
+        System.out.println(new LongestPalindromicSubstring().lpss2("aaaabaa"));
         System.out.println(new LongestPalindromicSubstring().lpss2("efgabcba"));
         System.out.println(new LongestPalindromicSubstring().lpss2("mnopomn"));
         System.out.println(new LongestPalindromicSubstring().lpss2("abcde"));
