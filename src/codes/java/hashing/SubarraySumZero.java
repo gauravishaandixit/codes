@@ -1,34 +1,58 @@
 package codes.java.hashing;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class SubarraySumZero {
-    int[] longestSubarraySumZero(int[] arr)
+    ArrayList<Integer> longestSubarraySumZero(ArrayList<Integer> A)
     {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int currSum = 0;
-        int start = 0, end = 0;
-        map.put(0, -1);
-        for(int i = 0; i < arr.length; i++)
+        HashMap<Integer,Integer> map = new HashMap<>();
+
+        int max = Integer.MIN_VALUE;
+
+        int start = -1, end = -1;
+
+        int sum = 0;
+
+        for(int i = 0; i < A.size(); i++)
         {
-            currSum += arr[i];
-            if(map.containsKey(currSum))
+            sum += A.get(i);
+            if(sum == 0)
             {
-                if(i - map.get(currSum) > end - start)
-                {
-                    start = map.get(currSum);
-                    end = i;
-                }
+                max = i + 1;
+                start = 0;
+                end = i;
             }
             else
-                map.put(currSum, i);
+            {
+                if(!map.containsKey(sum))
+                    map.put(sum,i);
+                else
+                {
+                    if(i - map.get(sum) > max)
+                    {
+                        max = i - map.get(sum);
+                        start = map.get(sum) + 1;
+                        end = i;
+                    }
+                }
+            }
         }
-        return new int[]{start + 1, end };
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        if(start == -1 || end == -1)
+            return ans;
+
+        for(int j = start; j <= end; j++)
+            ans.add(A.get(j));
+
+        return ans;
     }
 
     public static void main(String[] ar)
     {
-        int ans[] = new SubarraySumZero().longestSubarraySumZero(new int[]{1 ,2 ,-2 ,4 ,-4});
-        System.out.println(ans[0] + " " + ans[1]);
+        System.out.println(new SubarraySumZero().longestSubarraySumZero(new ArrayList<>(Arrays.asList(1 ,2 ,-2 ,4 ,-4))));
+
     }
 }
