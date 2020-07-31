@@ -1,4 +1,4 @@
-package codes.java.dp;
+package codes.java.dp.others;
 
 public class CatalanNumber {
 
