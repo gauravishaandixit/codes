@@ -17,7 +17,7 @@ public class BooleanParMemo {
         if( i == j)
             return expr.charAt(i) == value ? 1 : 0;
 
-        String key = "" + i + " " + " " + j + value;
+        String key = "" + i + " " + j + " " + value;
         if(memo.containsKey(key))
             return memo.get(key);
 
