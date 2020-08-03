@@ -2,7 +2,7 @@ package codes.java.tree.construct;
 
 import codes.java.tree.TreeNode;
 
-public class MakeABSTFromSortedArray {
+public class SortedArrayToBST {
 
     TreeNode makeBST(int[] arr)
     {
