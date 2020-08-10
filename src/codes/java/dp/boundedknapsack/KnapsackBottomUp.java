@@ -11,7 +11,7 @@ public class KnapsackBottomUp {
             {
                 T[i][j] = T[i-1][j];
                 if(weight[i-1] <= j)
-                    T[i][j] += profit[i - 1] + T[i-1][j - weight[i - 1]];
+                    T[i][j] = Math.max(profit[i - 1] + T[i-1][j - weight[i - 1]], T[i][j]);
             }
         }
 

@@ -1,11 +1,11 @@
 package codes.java.dp.lcsconcept;
 
 public class ShortestCommonSupersequence {
-    int lengthOfSCS(String s1, String s2)
+    private int lengthOfSCS(String s1, String s2)
     {
         int m = s1.length();
         int n = s2.length();
-        int T[][] = new int[m + 1][n + 1];
+        int[][] T = new int[m + 1][n + 1];
 
         for(int i = 1; i <= m; i++)
         {
