@@ -42,6 +42,6 @@ public class WildcardMatching {
         System.out.println(new WildcardMatching().wildcardMatching("cb","?a"));
         System.out.println(new WildcardMatching().wildcardMatching("adceb","a*b"));
         System.out.println(new WildcardMatching().wildcardMatching("acdcb","a*c?b"));
-
+        System.out.println(new WildcardMatching().wildcardMatching("acdcb","ac*b"));
     }
 }

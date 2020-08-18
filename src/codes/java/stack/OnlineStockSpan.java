@@ -3,10 +3,10 @@ package codes.java.stack;
 import java.util.Stack;
 
 public class OnlineStockSpan {
-    int[] onlineStockSpan(int[] prices)
+    private int[] onlineStockSpan(int[] prices)
     {
         int n = prices.length;
-        int ans[] = new int[n];
+        int[] ans = new int[n];
         Stack<Integer> stack = new Stack<>();
         for(int i = n - 1; i >= 0; i--)
         {
@@ -23,8 +23,8 @@ public class OnlineStockSpan {
 
     public static void main(String[] ar)
     {
-        int prices[] = new int[]{100, 80, 60, 70, 60, 75, 85};
-        int ans[] = new OnlineStockSpan().onlineStockSpan(prices);
+        int[] prices = new int[]{100, 80, 60, 70, 60, 75, 85};
+        int[] ans = new OnlineStockSpan().onlineStockSpan(prices);
         for(int a: ans)
             System.out.print(a + " ");
 
