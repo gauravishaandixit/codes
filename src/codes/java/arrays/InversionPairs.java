@@ -2,7 +2,7 @@ package codes.java.arrays;
 
 public class InversionPairs {
 
-    int countIP(int[] arr)
+    private int countIP(int[] arr)
     {
         int ans = 0;
         for(int i = 0; i < arr.length; i++)
@@ -16,13 +16,13 @@ public class InversionPairs {
         return ans;
     }
 
-    int countInversionPair(int[] arr)
+    private int countInversionPair(int[] arr)
     {
         int[] temp = new int[arr.length];
         return mergeSort(arr, 0, arr.length - 1, temp);
     }
 
-    int mergeSort(int[] arr, int l, int r, int[] temp)
+    private int mergeSort(int[] arr, int l, int r, int[] temp)
     {
         int count = 0;
         if(l < r)
@@ -37,7 +37,7 @@ public class InversionPairs {
         return count;
     }
 
-    int merge(int[] arr, int l, int mid, int r, int[] temp)
+    private int merge(int[] arr, int l, int mid, int r, int[] temp)
     {
         int invCount = 0;
         int i = l, j = mid + 1;

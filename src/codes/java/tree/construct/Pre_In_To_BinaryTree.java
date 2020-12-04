@@ -26,8 +26,9 @@ public class Pre_In_To_BinaryTree {
             }
         }
 
+        int nodesOnLeft = inIndex - inStart;
         root.left = treeBuilder(pre, preStart + 1, in, inStart, inIndex-1);
-        root.right = treeBuilder(pre, preStart + inIndex + 1- inStart , in, inIndex + 1, inEnd);
+        root.right = treeBuilder(pre, preStart + nodesOnLeft + 1, in, inIndex + 1, inEnd);
 
         return root;
     }

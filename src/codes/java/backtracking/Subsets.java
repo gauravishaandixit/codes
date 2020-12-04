@@ -1,6 +1,7 @@
 package codes.java.backtracking;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -39,5 +40,9 @@ public class Subsets {
         findSubsets(A, arr, index + 1);
         arr.remove(arr.size() - 1);
 
+    }
+    public static void main(String[] arg)
+    {
+        System.out.println(new Subsets().subsets(new ArrayList<>(Arrays.asList(1,2,3))));
     }
 }

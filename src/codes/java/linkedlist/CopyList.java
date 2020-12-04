@@ -3,7 +3,7 @@ package codes.java.linkedlist;
 import java.util.HashMap;
 
 public class CopyList {
-    class RandomListNode
+    static class RandomListNode
     {
         int val;
         RandomListNode next, random;

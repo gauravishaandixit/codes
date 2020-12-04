@@ -28,3 +28,14 @@ public class Helper {
     {
     }
 }
+
+
+/*
+* In addition to the above, I would like to tell you that there are none covid positive cases within a 3 km radius from
+* my home. So I can assure you that I have never come in contact with any covid infected person.
+* Also, the Arogya Setu app is showing around 10 people who were covid positive in the last one month in 10 km of the
+* area near me.
+
+ *
+*
+* */
