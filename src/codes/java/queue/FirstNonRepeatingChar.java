@@ -11,7 +11,7 @@ public class FirstNonRepeatingChar {
         Queue<Character> q = new LinkedList();
         char[] map = new char[26];
 
-        for(var ch: str.toCharArray())
+        for(char ch: str.toCharArray())
         {
             map[ch - 'a']++;
             q.add(ch);

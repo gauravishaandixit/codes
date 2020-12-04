@@ -1,7 +1,5 @@
 package codes.java.dp.matrixcm;
 
-import com.sun.jdi.VMCannotBeModifiedException;
-
 public class MCMRecursive {
 
     int mcmRecursive(int arr[])

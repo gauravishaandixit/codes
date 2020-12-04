@@ -82,7 +82,7 @@ public class FarthestNodeFromEachNode {
     }
     public static void main(String[] args)
     {
-        var ans = new FarthestNodeFromEachNode().farthestNodeFromEachNode(new int[]{1,1,1,1,1,0,0,0,0,0,1,0,0,0,0});
+        ArrayList<Integer> ans = new FarthestNodeFromEachNode().farthestNodeFromEachNode(new int[]{1,1,1,1,1,0,0,0,0,0,1,0,0,0,0});
         System.out.println(ans);
         System.out.println();
 

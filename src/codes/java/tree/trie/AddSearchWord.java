@@ -25,7 +25,7 @@ public class AddSearchWord {
     void add(String word)
     {
         TrieNode curr = root;
-        for(var ch: word.toCharArray())
+        for(char ch: word.toCharArray())
         {
             curr.children.putIfAbsent(ch, new TrieNode());
             curr = curr.children.get(ch);

@@ -7,7 +7,7 @@ public class RemoveDuplicatesString {
     String removeDuplicates(String str)
     {
         Stack<Character> st = new Stack<>();
-        for(var ch: str.toCharArray())
+        for(char ch: str.toCharArray())
         {
             if(!st.isEmpty() && st.peek().equals(ch))
                 st.pop();
