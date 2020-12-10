@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class SubarraySumZero {
+public class LongestSubarraySumZero {
     ArrayList<Integer> longestSubarraySumZero(ArrayList<Integer> A)
     {
         HashMap<Integer,Integer> map = new HashMap<>();
@@ -52,7 +52,7 @@ public class SubarraySumZero {
 
     public static void main(String[] ar)
     {
-        System.out.println(new SubarraySumZero().longestSubarraySumZero(new ArrayList<>(Arrays.asList(1 ,2 ,-2 ,4 ,-4))));
+        System.out.println(new LongestSubarraySumZero().longestSubarraySumZero(new ArrayList<>(Arrays.asList(1 ,2 ,-2 ,4 ,-4))));
 
     }
 }

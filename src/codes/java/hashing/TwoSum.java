@@ -13,10 +13,11 @@ public class TwoSum {
         {
             if(map.containsKey(B - A[i]))
                 return new int[]{map.get(B - A[i]) + 1, i + 1};
-
             else
-            if(!map.containsKey(A[i]))
-                map.put(A[i], i);
+            {
+                if(!map.containsKey(A[i]))
+                    map.put(A[i], i);
+            }
         }
         return new int[0];
     }
