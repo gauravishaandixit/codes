@@ -1,21 +1,29 @@
 package codes.java.arrays;
 
-import java.util.ArrayList;
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
 
 public class RemoveDuplicates2 {
-    int removeDuplicates(ArrayList<Integer> a) {
-        int n = a.size();
-        int j = 0;
-
-        for(int i = 0; i < n; i++)
+    int removeDuplicates(int[] nums) {
+        int i = 0;
+        for(int num: nums)
         {
-            if(i < n - 2 && a.get(i).equals(a.get(i + 1)) && a.get(i).equals(a.get(i + 2)))
-                continue;
-            else
-            {
-                a.set(j++, a.get(i));
-            }
+            if(i < 2 || num > nums[i - 2])
+                nums[i++] = num;
+
         }
-        return j;
+
+        return i;
+    }
+
+
+    int removeDuplicatesWithAtmostK(int[] nums, int K)
+    {
+        int i = 0;
+        for(int num: nums)
+        {
+            if(i < K || num > nums[i- K])
+                nums[i++] = num;
+        }
+        return i;
     }
 }

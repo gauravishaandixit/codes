@@ -26,9 +26,17 @@ public class vaccine1 {
             }
             else
             {
-                p = p - Math.abs(d1 - d2) * (d1 < d2 ? v1: v2);
-                int req = (int) Math.ceil(p / ((v1 + v2) * 1.0));
-                System.out.println(Math.min(d1, d2) + Math.abs(d1 - d2) + req - 1);
+                int remP = p - Math.abs(d1 - d2) * (d1 < d2 ? v1: v2);
+                if(remP <= 0)
+                {
+                    int req = (int)Math.ceil(p/((d1 < d2 ? v1: v2)*1.0));
+                    System.out.println(Math.min(d1, d2) + req - 1);
+                }
+                else
+                {
+                    int req = (int) Math.ceil(remP / ((v1 + v2) * 1.0));
+                    System.out.println(Math.min(d1, d2) + Math.abs(d1 - d2) + req - 1);
+                }
             }
         }
     }

@@ -4,17 +4,17 @@ import java.util.Arrays;
 
 public class BurstBalloon {
 
-    int maxCoins(int coins[])
+    int maxCoins(int[] coins)
     {
         int n = coins.length;
-        int coinsNew[] = new int[n + 2];
+        int[] coinsNew = new int[n + 2];
 
         Arrays.fill(coinsNew, 1);
         int index = 1;
         for(int coin: coins)
             coinsNew[index++] = coin;
         n = coinsNew.length;
-        int memo[][] = new int[n][n];
+        int[][] memo = new int[n][n];
 
         for(int i = 0; i < n; i++)
             Arrays.fill(memo[i], -1);

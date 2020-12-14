@@ -5,7 +5,7 @@ public class TrimBST {
     TreeNode trimBST(TreeNode root, int L, int R)
     {
         if(root == null)
-            return root;
+            return null;
 
         if(root.val < L)
             return trimBST(root.right, L, R);
