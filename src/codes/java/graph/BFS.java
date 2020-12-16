@@ -14,7 +14,7 @@ public class BFS {
         for(int i = 0; i < n; i++)
             graph.add(new ArrayList<>());
 
-        for(int edge[] : edges)
+        for(int[] edge : edges)
         {
             int u = edge[0];
             int v = edge[1];
@@ -23,7 +23,7 @@ public class BFS {
             graph.get(v).add(u);
         }
 
-        boolean vis[] = new boolean[n];
+        boolean[] vis = new boolean[n];
 
         for(int i = 0; i < n ;i++)
         {
@@ -48,10 +48,10 @@ public class BFS {
         return bfsOrder;
     }
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         BFS obj = new BFS();
-        int edges[][] = {{0, 1}, {3, 2},{1, 3},{5, 6}, {7,8}, {5,8}};
+        int[][] edges = {{0, 1}, {3, 2},{1, 3},{5, 6}, {7,8}, {5,8}};
         int n = 10;
 
         System.out.println(obj.BFSOrder(edges, n));

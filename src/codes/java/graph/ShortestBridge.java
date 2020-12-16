@@ -10,7 +10,7 @@ public class ShortestBridge {
         int m = matrix.length;
         int n = matrix[0].length;
         Queue<int[]> q = new LinkedList<>();
-        boolean firstIsland = false;
+        boolean firstIslandFound = false;
 
         for(int i = 0; i < m; i++)
         {
@@ -19,37 +19,44 @@ public class ShortestBridge {
                 if(matrix[i][j] == 1)
                 {
                     dfs(matrix, i, j, q);
-                    firstIsland = true;
+                    firstIslandFound = true;
                     break;
                 }
             }
 
-            if(firstIsland)
+            if(firstIslandFound)
                 break;
         }
 
-        int lengthBridge = 0;
         int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        int bridgeLength = 0;
+
         while(!q.isEmpty())
         {
-            int[] curr = q.poll();
-
-            for(int[] dir: dirs)
+            int size = q.size();
+            while(size -- > 0)
             {
-                int nextI = curr[0] + dir[0];
-                int nextJ = curr[1] + dir[1];
+                int[] curr = q.poll();
+                for(int[] dir: dirs)
+                {
+                    int i = curr[0] + dir[0];
+                    int j = curr[1] + dir[1];
 
-                if(nextI < 0 || nextJ < 0 || nextI >= m || nextJ >= n || matrix[nextI][nextJ] == 2)
-                    continue;
 
-                if(matrix[nextI][nextJ] == 1)
-                    return lengthBridge;
+                    if(i >= 0 && j >= 0 && i < m && j < n)
+                    {
+                        if(matrix[i][j] == 1)
+                            return bridgeLength;
 
-                matrix[nextI][nextJ] = 2;
-
-                q.add(new int[]{nextI, nextJ});
+                        if(matrix[i][j] == 0)
+                        {
+                            matrix[i][j] = 2;
+                            q.add(new int[]{i, j});
+                        }
+                    }
+                }
             }
-            lengthBridge++;
+            bridgeLength++;
         }
         return -1;
     }
