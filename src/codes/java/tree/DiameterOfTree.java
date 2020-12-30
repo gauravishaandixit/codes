@@ -2,25 +2,23 @@ package codes.java.tree;
 
 public class DiameterOfTree {
 
-    int diameter(TreeNode root)
+    int ans;
+
+    public int diameterOfBinaryTree(TreeNode root)
     {
-        if(root == null)
-            return 0;
-
-        int dRoot= height(root.left) + height(root.right) + 1;
-
-        int dRootLeft = diameter(root.left);
-        int dRootRight = diameter(root.right);
-
-        int ans = Math.max(dRoot, Math.max(dRootLeft, dRootRight));
+        ans = 0;
+        maxDepth(root);
         return ans;
     }
 
-    int height(TreeNode root)
-    {
-        if(root == null)
-            return 0;
+    private int maxDepth(TreeNode root) {
+        if (root == null) return 0;
 
-        return Math.max(height(root.left) , height(root.right)) + 1;
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+
+        ans = Math.max(ans, left + right);
+
+        return Math.max(left, right) + 1;
     }
 }

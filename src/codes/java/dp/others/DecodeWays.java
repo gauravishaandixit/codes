@@ -2,29 +2,37 @@ package codes.java.dp.others;
 
 public class DecodeWays {
 
-    public int numDecodings(String s)
-    {
-        int n=s.length();
-        char digits[] = s.toCharArray();
-
-        int count[] = new int[n + 1];
-        count[0] = 1;
-        count[1] = 1;
-
-        if(digits[0]=='0')
+    public int numDecodings(String s) {
+        if(s.charAt(0) == '0')
             return 0;
 
-        for (int i = 2; i <= n; i++)
+        int n = s.length();
+        int[] T = new int[n];
+        T[0] = 1;
+
+        for(int i = 1; i < n; i++)
         {
-            count[i] = 0;
+            /*
+            if(s.charAt(i) > '0')
+                T[i] += T[i - 1];
 
-            if (digits[i - 1] > '0')
-                count[i] = count[i - 1];
+            if(s.charAt(i-1) == '1' || (s.charAt(i-1) == '2' && s.charAt(i) <= '6'))
+                    T[i] += (i == 1 ? 1 : T[i-2]);
+            */
 
-            if (digits[i - 2] == '1' || (digits[i - 2] == '2' &&  digits[i - 1] < '7'))
-                count[i] += count[i - 2];
+            int first = Integer.parseInt(s.substring(i, i+1));
+            int second = Integer.parseInt(s.substring(i-1, i+1));
+
+            //System.out.println(first + " " + second);
+
+            if(first >= 1 && first <= 9)
+                T[i] += T[i-1];
+
+            if(second >= 10 && second <= 26)
+                T[i] += (i >=2 ? T[i-2] : 1);
         }
 
-        return count[n];
+        return T[n-1];
+
     }
 }

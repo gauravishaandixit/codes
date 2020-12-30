@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class AggressiveCows {
-    int largetsMinDistance(ArrayList<Integer> A, int B) {
+    int largestMinDistance(ArrayList<Integer> A, int B) {
         Collections.sort(A);
         int n = A.size();
         int low = 0;

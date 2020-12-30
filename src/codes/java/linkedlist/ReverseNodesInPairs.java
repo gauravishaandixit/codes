@@ -1,5 +1,7 @@
 package codes.java.linkedlist;
 
+// https://leetcode.com/problems/swap-nodes-in-pairs/
+
 public class ReverseNodesInPairs {
     ListNode swapPairs(ListNode head) {
 
@@ -21,5 +23,16 @@ public class ReverseNodesInPairs {
             current = current.next.next;
         }
         return dummy.next;
+    }
+
+    ListNode swapPairsRec(ListNode head) {
+        if ((head == null)||(head.next == null))
+            return head;
+
+        ListNode n = head.next;
+        head.next = swapPairsRec(head.next.next);
+        n.next = head;
+
+        return n;
     }
 }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class FloydWarshall {
-    int[][] allPairShortestPath(int[][] edges, int n, int start) {
+    int[][] allPairShortestPath(int[][] edges, int n) {
 
         HashMap<Integer, HashMap<Integer, Integer>> graph = new HashMap<>();
 
