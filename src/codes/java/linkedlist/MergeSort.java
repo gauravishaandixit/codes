@@ -12,7 +12,7 @@ public class MergeSort {
             fast = fast.next.next;
         }
 
-        prev.next = slow;
+        prev.next = null;
 
         ListNode head1 = mergeSort(head);
         ListNode head2 = mergeSort(slow);
