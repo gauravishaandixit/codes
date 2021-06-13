@@ -4,7 +4,7 @@ public class SubsetSum {
     boolean subsetSum(int[] arr, int S)
     {
         int n = arr.length;
-        boolean T[][] = new boolean[n + 1][S + 1];
+        boolean[][] T = new boolean[n + 1][S + 1];
         for(int i = 0; i <= n; i++)
             T[i][0] = true;
 
