@@ -30,8 +30,7 @@ public class Subsets {
     }
     void findSubsets(ArrayList<Integer> A, ArrayList<Integer> arr, int index )
     {
-        if(index == A.size())
-        {
+        if(index == A.size()) {
             ans.add(new ArrayList<>(arr));
             return;
         }

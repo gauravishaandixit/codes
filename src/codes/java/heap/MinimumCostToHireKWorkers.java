@@ -1,6 +1,11 @@
+package codes.java.heap;
 // https://leetcode.com/problems/minimum-cost-to-hire-k-workers/
 
-class Solution {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.PriorityQueue;
+
+public class MinimumCostToHireKWorkers {
     public double mincostToHireWorkers(int[] quality, int[] wage, int k) {
         ArrayList<Worker> arr = new ArrayList<>();
         for(int i = 0; i < wage.length; i++) {

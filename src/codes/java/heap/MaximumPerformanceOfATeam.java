@@ -1,6 +1,11 @@
+package codes.java.heap;
 // https://leetcode.com/problems/maximum-performance-of-a-team/
 
-class Solution {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.PriorityQueue;
+
+public class MaximumPerformanceOfATeam {
     public int maxPerformance(int n, int[] speed, int[] efficiency, int k) {
         ArrayList<Engineer> engineers = new ArrayList<>();
         for(int i = 0; i < n; i++) {
