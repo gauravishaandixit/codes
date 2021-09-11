@@ -30,12 +30,14 @@ public class CommutableIslands {
     {
         int minCost = 0;
         Arrays.sort(edges, Comparator.comparingInt(a->a[2]));
+
         int[] parents = new int[n + 1];
         for(int i = 0; i < n; i++)
             parents[i] = i;
+
         int countOfEdges = 0;
-        for(int[] edge :edges)
-        {
+
+        for(int[] edge :edges) {
             if(find(edge[0], parents) == find(edge[1], parents))
                 continue;
 

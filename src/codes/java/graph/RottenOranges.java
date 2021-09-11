@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class RottenOranges {
 
-    class Rotten
+    static class Rotten
     {
         int i, j;
         Rotten(int i, int j)

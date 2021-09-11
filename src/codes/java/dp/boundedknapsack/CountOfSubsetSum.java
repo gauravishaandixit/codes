@@ -5,7 +5,7 @@ public class CountOfSubsetSum {
     int subsetSum(int[] arr, int S)
     {
         int n = arr.length;
-        int T[][] = new int[n + 1][S + 1];
+        int[][] T = new int[n + 1][S + 1];
         for(int i = 0; i <= n; i++)
             T[i][0] = 1;
 
@@ -27,7 +27,7 @@ public class CountOfSubsetSum {
 
     public static void main(String[] args)
     {
-        int set[] = new int[]{1, 2, 4, 5, 7};
+        int[] set = new int[]{1, 2, 4, 5, 7};
         int S = 8;
         System.out.println(new CountOfSubsetSum().subsetSum(set, S));
 

@@ -31,9 +31,37 @@ public class RightView {
         return ans;
     }
 
+    ArrayList<Integer> rightViewRecursive(TreeNode root) {
+
+        ArrayList<Integer> ans = new ArrayList<>();
+        if(root == null)
+            return ans;
+
+        int[] maxLevel = {0};
+
+        levelOrderTraversal(root, ans, 1, maxLevel);
+
+        return ans;
+    }
+
+    private void levelOrderTraversal(TreeNode root, ArrayList<Integer> ans, int currLevel, int[] maxLevel) {
+        if(root == null)
+            return;
+
+        if(maxLevel[0] < currLevel) {
+            ans.add(root.val);
+            maxLevel[0] = currLevel;
+        }
+
+        levelOrderTraversal(root.right, ans, currLevel + 1, maxLevel);
+        levelOrderTraversal(root.left, ans, currLevel + 1, maxLevel);
+    }
+
+
     public static void main(String[] args)
     {
         TreeNode root = new BinarySearchTree().makeBST(new int[]{5,3,2,4,7,6,8});
         System.out.println(new RightView().rightView(root));
+        System.out.println(new RightView().rightViewRecursive(root));
     }
 }

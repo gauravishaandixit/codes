@@ -1,6 +1,5 @@
 package codes.java.hashing;
 
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.Comparator;
 import java.util.HashMap;

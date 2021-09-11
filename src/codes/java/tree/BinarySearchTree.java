@@ -8,24 +8,23 @@ public class BinarySearchTree {
     TreeNode makeBST(int[] arr)
     {
         TreeNode root = null;
-        for(int i = 0; i < arr.length; i++)
-            root = insert(root, arr[i]);
+        for (int j : arr)
+            root = insert(root, j);
 
-        System.out.println(preOrder(root));
-        System.out.println(inOrder(root));
-        System.out.println(postOrder(root));
+        System.out.println("Preorder: " + preOrder(root));
+        System.out.println("Inorder: " + inOrder(root));
+        System.out.println("Postorder: " + postOrder(root));
         return root;
     }
     TreeNode insert(TreeNode root, int key)
     {
-        if(root == null)
-        {
+        if(root == null) {
             root = new TreeNode(key);
         }
+
         if(root.val < key)
             root.right = insert(root.right, key);
-        else
-        {
+        else {
             if(root.val > key)
                 root.left = insert(root.left, key);
         }
@@ -34,20 +33,17 @@ public class BinarySearchTree {
     TreeNode deleteNode(TreeNode root, int key)
     {
         if (root == null)
-            return root;
+            return null;
 
         if(key < root.val)
             root.left = deleteNode(root.left , key);
-        else
-        {
+        else {
             if(key > root.val)
                 root.right = deleteNode(root.right, key);
-            else
-            {
+            else {
                 if(root.left == null)
                     return root.right;
-                else
-                {
+                else {
                     if(root.right == null)
                         return root.left;
                 }
@@ -125,6 +121,9 @@ public class BinarySearchTree {
         }
         return ans;
     }
+
+
+
     public static void main(String[] ar)
     {
         BinarySearchTree obj = new BinarySearchTree();

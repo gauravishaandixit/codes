@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public class KruskalMST {
 
-    class Edge
+    static class Edge
     {
         int u, v, weight;
         Edge(int u, int v, int weight)
@@ -44,22 +44,22 @@ public class KruskalMST {
     }
 
 
-    int KruskalAlgorithm(int n, int edges[][])
+    int KruskalAlgorithm(int n, int[][] edges)
     {
         int minCost = 0;
         mstEdges = new ArrayList<>();
         Arrays.sort(edges, Comparator.comparingInt(a -> a[2]));
-        int parents[] = new int[n];
+        int[] parents = new int[n];
         for(int i = 0; i < n; i++)
             parents[i] = i;
         connectedComponents = n;
-        for(int edge[] : edges)
+        for(int[] edge : edges)
         {
             if(find(edge[0], parents) == find(edge[1], parents))
                 continue;
             union(edge[0], edge[1], parents);
             minCost += edge[2];
-            mstEdges.add(new Edge(edge[0],edge[1],edge[2]));
+            mstEdges.add(new Edge(edge[0], edge[1], edge[2]));
 
             if(connectedComponents == 1)
                 return minCost;
@@ -71,7 +71,7 @@ public class KruskalMST {
     {
         KruskalMST obj = new KruskalMST();
         int n = 8;
-        int edges[][] = new int[][]{{0,1,3}, {0,2,1}, {1,2,1},{2,3,5},{3,4,2},{3,7,8},{4,5,3},{5,6,6},{6,7,4},{5,7,1},{3,5,1}};
+        int[][] edges = new int[][]{{0,1,3}, {0,2,1}, {1,2,1},{2,3,5},{3,4,2},{3,7,8},{4,5,3},{5,6,6},{6,7,4},{5,7,1},{3,5,1}};
         System.out.println("Weight of MST is:: " + obj.KruskalAlgorithm(n, edges));
         System.out.println("Edges of MST are:: ");
         System.out.println(obj.mstEdges);

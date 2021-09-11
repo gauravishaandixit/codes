@@ -1,5 +1,7 @@
 package codes.java.tree;
 
+// Pata ni kya code hai, hihi
+
 public class CountIfSubtree {
 
     int CountIfSubtree(TreeNode root1, TreeNode root2)
@@ -30,6 +32,6 @@ public class CountIfSubtree {
         if(root == null)
             return 0;
 
-        return 1+ countNodesInTree(root.left) + countNodesInTree(root.right);
+        return 1 + countNodesInTree(root.left) + countNodesInTree(root.right);
     }
 }

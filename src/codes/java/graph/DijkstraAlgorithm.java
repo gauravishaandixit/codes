@@ -9,23 +9,22 @@ public class DijkstraAlgorithm
 {
     int[] shortestPath(int n, int[][] edges, int start)
     {
-        int ans[] = new int[n];
+        int[] ans = new int[n];
         Arrays.fill(ans, Integer.MAX_VALUE);
         HashMap<Integer, HashMap<Integer, Integer>> graph = new HashMap<>();
 
-        for(int[] edge: edges)
-        {
+        for(int[] edge: edges) {
             graph.computeIfAbsent(edge[0], k -> new HashMap<>()).put(edge[1], edge[2]);
             graph.computeIfAbsent(edge[1], k -> new HashMap<>()).put(edge[0], edge[2]);
         }
 
-        boolean vis[] = new boolean[n];
+        boolean[] vis = new boolean[n];
+
         PriorityQueue<int[]> minHeap = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
         minHeap.add(new int[]{start, 0});
         ans[start] = 0;
 
-        while(!minHeap.isEmpty())
-        {
+        while(!minHeap.isEmpty()) {
             int[] curr = minHeap.poll();
             if(vis[curr[0]]) continue;
 
@@ -33,11 +32,10 @@ public class DijkstraAlgorithm
             ans[curr[0]] = curr[1];
 
             if(!graph.containsKey(curr[0])) continue;
-            for(int neigh: graph.get(curr[0]).keySet())
-            {
+            for(int neigh: graph.get(curr[0]).keySet()) {
+
                 int weight = graph.get(curr[0]).get(neigh);
-                if(!vis[neigh] && ans[neigh] > ans[curr[0]] + weight)
-                {
+                if(!vis[neigh] && ans[neigh] > ans[curr[0]] + weight) {
                     ans[neigh] = ans[curr[0]] + weight;
                     minHeap.add(new int[]{neigh, ans[neigh]});
                 }
@@ -53,7 +51,7 @@ public class DijkstraAlgorithm
         int n = 4;
         int start = 2;
 
-        int res[] = obj.shortestPath(n, edges, start);
+        int[] res = obj.shortestPath(n, edges, start);
 
         for(int i = 0; i < n ;i++)
             System.out.print(res[i] + " ");
