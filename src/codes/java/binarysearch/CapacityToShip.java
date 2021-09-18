@@ -11,11 +11,9 @@ public class CapacityToShip {
 
         int ans = max;
 
-        while(min <= max)
-        {
+        while(min <= max) {
             int mid = min + (max - min) / 2;
-            if(isPossible(weights, D, mid))
-            {
+            if(isPossible(weights, D, mid)) {
                 ans = mid;
                 max = mid - 1;
             }
@@ -25,16 +23,13 @@ public class CapacityToShip {
 
         return ans;
     }
-    boolean isPossible(int[] weights, int D, int maxWeight)
-    {
+    boolean isPossible(int[] weights, int D, int maxWeight) {
         int noOfDays = 1;
         int totalWeight = 0;
 
-        for(int weight : weights)
-        {
+        for(int weight : weights) {
             totalWeight += weight;
-            if(totalWeight > maxWeight)
-            {
+            if(totalWeight > maxWeight) {
                 totalWeight = weight;
                 noOfDays++;
             }

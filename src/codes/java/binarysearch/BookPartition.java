@@ -2,10 +2,9 @@ package codes.java.binarysearch;
 
 import java.util.Arrays;
 //You have to allocate books to B number of students so that
-// maximum number of pages alloted to a student is minimum.
+// maximum number of pages allotted to a student is minimum.
 public class BookPartition {
-    int bookPartition(int[] books, int students)
-    {
+    int bookPartition(int[] books, int students) {
         if(books.length < students)
             return -1;
 
@@ -13,11 +12,9 @@ public class BookPartition {
         int high = Arrays.stream(books).sum();
         int ans = -1;
 
-        while(low <= high)
-        {
+        while(low <= high) {
             int mid = low + (high - low) / 2;
-            if(isPossibleToRead(books, students, mid))
-            {
+            if(isPossibleToRead(books, students, mid)) {
                 ans = mid;
                 high = mid - 1;
             }
@@ -26,16 +23,13 @@ public class BookPartition {
         }
         return ans;
     }
-    boolean isPossibleToRead(int books[], int students, int currMaxm)
-    {
+    boolean isPossibleToRead(int[] books, int students, int currMaxm) {
         int noOfStudents = 1;
         int currPages = 0;
 
-        for(int book: books)
-        {
+        for(int book: books) {
             currPages += book;
-            if(currPages > currMaxm)
-            {
+            if(currPages > currMaxm) {
                 noOfStudents++;
                 currPages = book;
             }
@@ -45,9 +39,8 @@ public class BookPartition {
         return true;
     }
 
-    public static void main(String[] arg)
-    {
-        int books[] = new int[]{25, 98, 113, 47, 83};
+    public static void main(String[] arg) {
+        int[] books = new int[]{25, 98, 113, 47, 83};
         int students = 3;
         System.out.println(new BookPartition().bookPartition(books, students));
 

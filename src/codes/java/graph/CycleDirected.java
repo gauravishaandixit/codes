@@ -4,35 +4,37 @@ import java.util.ArrayList;
 
 public class CycleDirected {
 
-    boolean isCyclic(ArrayList<ArrayList<Integer>> list, int V)
+    boolean isCyclic(ArrayList<ArrayList<Integer>> graph, int V)
     {
         int[] vis = new int[V];
-        boolean flag = false;
-        for(int i = 0; i < V; i++)
-            if(vis[i] == 0)
-                flag |= dfs(list,vis,i);
+        for(int i = 0; i < V; i++) {
+            if (vis[i] == 0) {
+                if (dfs(graph, vis, i)) {
+                    return true;
+                }
+            }
+        }
 
-        return flag;
+        return false;
     }
 
-    static boolean dfs(ArrayList<ArrayList<Integer>> list,int[] vis,int i)
+    static boolean dfs(ArrayList<ArrayList<Integer>> graph,int[] vis,int i)
     {
-        ArrayList<Integer> arr = list.get(i);
         vis[i] = 1;
-        boolean flag = false;
-        for(int j : arr)
-        {
-            if(vis[j] == 0)
-                flag |= dfs(list,vis,j);
-            else
-            {
+        for(int j : graph.get(i)) {
+            if(vis[j] == 0) {
+                if(dfs(graph, vis, j))
+                    return true;
+            }
+            else {
                 if(vis[j] == 1)
-                    flag |= true;
+                    return true;
             }
         }
 
         vis[i] = 2;
-        return flag;
+        return false;
     }
 
 }
+

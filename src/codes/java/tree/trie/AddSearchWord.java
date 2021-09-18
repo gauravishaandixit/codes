@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class AddSearchWord {
 
-    private class TrieNode
+    private static class TrieNode
     {
         HashMap<Character, TrieNode> children;
         boolean isEnd;
@@ -16,7 +16,7 @@ public class AddSearchWord {
         }
     }
 
-    private TrieNode root;
+    private final TrieNode root;
     AddSearchWord()
     {
         root = new TrieNode();

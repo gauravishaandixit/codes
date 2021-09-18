@@ -8,7 +8,7 @@ public class NextGreaterElement {
     {
         int n = arr.length;
         Stack<Integer> st = new Stack<>();
-        int ans[] = new int[n];
+        int[] ans = new int[n];
 
         for(int i = 0; i < n; i++)
         {
@@ -22,7 +22,7 @@ public class NextGreaterElement {
         return ans;
     }
 
-    void printArray(int arr[])
+    static void printArray(int[] arr)
     {
         for(int a: arr)
             System.out.print(a + " ");
@@ -31,16 +31,16 @@ public class NextGreaterElement {
     }
     public static void main(String[] ar)
     {
-        int arr[] = new int[]{1, 2, 3, 4, 5, 6};
-        int ans[] = new NextGreaterElement().nge(arr);
-        new NextGreaterElement().printArray(ans);
+        int[] arr = new int[]{1, 2, 3, 4, 5, 6};
+        int[] ans = new NextGreaterElement().nge(arr);
+        printArray(ans);
 
         arr = new int[]{6, 5, 4, 3, 2, 1};
         ans = new NextGreaterElement().nge(arr);
-        new NextGreaterElement().printArray(ans);
+        printArray(ans);
 
         arr = new int[]{10, 18, 15, 9, 7, 23};
         ans = new NextGreaterElement().nge(arr);
-        new NextGreaterElement().printArray(ans);
+        printArray(ans);
     }
 }

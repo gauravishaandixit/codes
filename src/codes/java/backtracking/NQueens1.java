@@ -4,9 +4,9 @@ import java.sql.Time;
 
 public class NQueens1 {
     int ans;
-    boolean cols[];
-    boolean diagLR[];
-    boolean diagRL[];
+    boolean[] cols;
+    boolean[] diagLR;
+    boolean[] diagRL;
     public int totalNQueens(int n) {
 
         ans = 0;
@@ -19,17 +19,13 @@ public class NQueens1 {
         return ans;
     }
 
-    void solve(int curr_row, int n)
-    {
-        if(curr_row == n)
-        {
+    void solve(int curr_row, int n) {
+        if(curr_row == n) {
             ans++;
-
             return;
         }
 
-        for(int column = 0; column < n; column++)
-        {
+        for(int column = 0; column < n; column++) {
             // if a queen is already present in same column or diagonals
             if(cols[column] || diagLR[curr_row - column + n - 1] || diagRL[curr_row + column])
                 continue;
@@ -46,8 +42,8 @@ public class NQueens1 {
             diagRL[curr_row + column] = false;
         }
     }
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
         System.out.println(new NQueens1().totalNQueens(4));
         System.out.println(new NQueens1().totalNQueens(5));
         System.out.println(new NQueens1().totalNQueens(50));

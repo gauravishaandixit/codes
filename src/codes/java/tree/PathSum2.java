@@ -10,6 +10,8 @@ public class PathSum2 {
         if(root == null)
             return ans;
 
+        allPathsToSum(root, sum, 0, ans, new ArrayList<>());
+
         return ans;
     }
 

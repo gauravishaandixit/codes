@@ -21,7 +21,7 @@ public class MostFrequentSum {
             if(me.getValue() == max)
                 count++;
 
-        int ans[] = new int[count];
+        int[] ans = new int[count];
         count = 0;
 
         for(Map.Entry<Integer, Integer> me : map.entrySet())

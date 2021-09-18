@@ -24,15 +24,13 @@ public class LetterPhone {
 
     void findAll(String digits, StringBuilder sb, ArrayList<String> ans, HashMap<Character, String> keyPad)
     {
-        if(sb.length() == digits.length())
-        {
+        if(sb.length() == digits.length()) {
             ans.add(sb.toString());
             return;
         }
 
         char curr = digits.charAt(sb.length());
-        for(char ch: keyPad.get(curr).toCharArray())
-        {
+        for(char ch: keyPad.get(curr).toCharArray()) {
             sb.append(ch);
             findAll(digits, sb, ans, keyPad);
             sb.deleteCharAt(sb.length() - 1);

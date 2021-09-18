@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class PopulateNextRightPointer {
-    class Node
+    static class Node
     {
         int val;
         Node left, right, nextRight;

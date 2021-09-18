@@ -1,26 +1,23 @@
 package codes.java.arrays;
 
 public class KadanesAlgo {
-    class Ans {
+    static class Ans {
         int start;
         int end;
         int maxSum;
 
-        Ans(int s, int e, int sum)
-        {
+        Ans(int s, int e, int sum) {
             start = s;
             end = e;
             maxSum = sum;
         }
 
-        public String toString()
-        {
+        public String toString() {
             return "Start:: " + start + ", End:: " + end + ", Maximum Subarray Sum:: " + maxSum;
         }
     }
 
-    Ans maximumContigousSubarraySum(int arr[])
-    {
+    Ans maximumContiguousSubarraySum(int arr[]) {
         int maxAns = Integer.MIN_VALUE;
         int currMax = 0;
         int s = 0;
@@ -45,11 +42,11 @@ public class KadanesAlgo {
 
     public static void main(String[] args)
     {
-        Ans ans = new KadanesAlgo().maximumContigousSubarraySum(new int[]{-2, -3, 4, -1, -2, 1, 5, -3});
+        Ans ans = new KadanesAlgo().maximumContiguousSubarraySum(new int[]{-2, -3, 4, -1, -2, 1, 5, -3});
         System.out.println(ans);
 
 
-        ans = new KadanesAlgo().maximumContigousSubarraySum(new int[]{1,2,3,4, -20, 11});
+        ans = new KadanesAlgo().maximumContiguousSubarraySum(new int[]{1,2,3,4, -20, 11});
         System.out.println(ans);
     }
 }

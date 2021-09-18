@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class EggDropMemo {
     int minNoWays(int eggs, int floors)
     {
-        int memo[][] = new int[eggs + 1][floors + 1];
-        for(int memos[] : memo)
+        int[][] memo = new int[eggs + 1][floors + 1];
+        for(int[] memos : memo)
             Arrays.fill(memos, -1);
 
         return minNoWays(eggs, floors, memo);
@@ -31,8 +31,8 @@ public class EggDropMemo {
 
     int minNoWays2(int eggs, int floors)
     {
-        int memo[][] = new int[eggs + 1][floors + 1];
-        for(int memos[] : memo)
+        int[][] memo = new int[eggs + 1][floors + 1];
+        for(int[] memos : memo)
             Arrays.fill(memos, -1);
 
         return minNoWays2(eggs, floors, memo);

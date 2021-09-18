@@ -5,7 +5,7 @@ public class DeleteLeavesWithGivenValue {
     TreeNode deleteLeaves(TreeNode root, int key)
     {
         if(root == null)
-            return root;
+            return null;
 
         root.left = deleteLeaves(root.left, key);
         root.right = deleteLeaves(root.right, key);

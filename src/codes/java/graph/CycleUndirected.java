@@ -7,82 +7,64 @@ import java.util.Queue;
 
 public class CycleUndirected {
 
-    boolean isCyclic(ArrayList<ArrayList<Integer>> graph, int V)
-    {
+    boolean isCyclicDFS(ArrayList<ArrayList<Integer>> list, int V) {
         boolean[] vis = new boolean[V];
-
         for(int i = 0; i < V; i++)
-        {
-            if(!vis[i])
-            {
-                if(isCyclicUtil(graph, i, -1, vis))
+            if(!vis[i]) {
+                if(isDFSCyclic(i, -1, list, vis)) {
                     return true;
-            }
-        }
-        return false;
-    }
-
-    boolean isCyclicUtil(ArrayList<ArrayList<Integer>> graph, int u, int p, boolean[] vis)
-    {
-        vis[u] = true;
-
-        for(int v: graph.get(u))
-        {
-            if(!vis[v])
-            {
-                if(isCyclicUtil(graph, v, u, vis))
-                    return true;
-            }
-            else
-            {
-                if(v != p)
-                    return true;
-            }
-        }
-        return false;
-    }
-
-    boolean isCyclicBFS(ArrayList<ArrayList<Integer>> graph, int V)
-    {
-        boolean[] vis = new boolean[V];
-
-        for(int i = 0; i < V; i++)
-        {
-            if(!vis[i])
-            {
-                if(isCyclicUtilBFS(graph, i, vis))
-                    return true;
-            }
-        }
-        return false;
-    }
-
-    boolean isCyclicUtilBFS(ArrayList<ArrayList<Integer>> graph, int u, boolean[] vis)
-    {
-        int[] parent = new int[graph.size()];
-        Arrays.fill(parent, -1);
-
-        Queue<Integer> q = new LinkedList<>();
-        q.add(u);
-        vis[u] = true;
-        while (!q.isEmpty())
-        {
-            int curr = q.poll();
-            for(int v : graph.get(curr))
-            {
-                if(!vis[v])
-                {
-                    vis[v] = true;
-                    q.add(v);
-                    parent[v] = u;
                 }
-                else
-                    if(parent[u] != v)
-                        return true;
+            }
+
+        return false;
+    }
+
+    private boolean isDFSCyclic(int i, int parent, ArrayList<ArrayList<Integer>> list, boolean[] vis) {
+        vis[i] = true;
+
+        for(int neigh: list.get(i)) {
+            if(!vis[neigh]) {
+                if(isDFSCyclic(neigh, i, list, vis))
+                    return true;
+            } else {
+                if(neigh != parent)
+                    return true;
             }
         }
 
         return false;
     }
 
+    boolean isCyclicBFS(ArrayList<ArrayList<Integer>> list, int V) {
+        boolean[] vis = new boolean[V];
+        for(int i = 0; i < V; i++)
+            if(!vis[i]) {
+                if(isBFSCyclic(i, -1, list, vis)) {
+                    return true;
+                }
+            }
+
+        return false;
+    }
+
+    private boolean isBFSCyclic(int i, int parent, ArrayList<ArrayList<Integer>> list, boolean[] vis) {
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{i, parent});
+        vis[i] = true;
+
+        while(!q.isEmpty()) {
+
+            int[] curr = q.poll();
+            for(int neigh: list.get(curr[0])) {
+                if(!vis[neigh]) {
+                    vis[neigh] = true;
+                    q.add(new int[]{neigh, curr[0]});
+                } else {
+                    if(neigh != curr[1])
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
 }

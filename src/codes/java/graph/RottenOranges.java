@@ -32,9 +32,10 @@ public class RottenOranges {
             {
                 if(grid[i][j] == 2)
                     q.add(new Rotten(i, j));
-                else
-                if(grid[i][j] == 1)
-                    freshOranges++;
+                else {
+                    if (grid[i][j] == 1)
+                        freshOranges++;
+                }
             }
         }
 
@@ -43,12 +44,10 @@ public class RottenOranges {
         if(freshOranges == 0)
             return 0;
 
-
-
         int time = 0;
 
-        int x[] = {-1, 1, 0, 0};
-        int y[] = {0, 0, 1, -1};
+        int[] x = {-1, 1, 0, 0};
+        int[] y = {0, 0, 1, -1};
 
         while(!q.isEmpty())
         {

@@ -1,25 +1,25 @@
 package codes.java.tree;
 
 public class MaxmPathSum {
-    int ans;
     int maxPathSum(TreeNode root)
     {
         if(root == null)
             return 0;
-        ans = Integer.MIN_VALUE;
-        calculate(root);
-        return ans;
+        int[] ans = {Integer.MIN_VALUE};
+        calculate(root, ans);
+        return ans[0];
     }
 
-    int calculate(TreeNode root)
+    int calculate(TreeNode root, int[] ans)
     {
         if(root == null)
             return 0;
 
-        int left = Math.max(calculate(root.left), 0);
-        int right = Math.max(calculate(root.right), 0);
+        int left = Math.max(calculate(root.left, ans), 0);
+        int right = Math.max(calculate(root.right, ans), 0);
 
-        ans = Math.max(left + right + root.val , ans);
+        ans[0] = Math.max(left + right + root.val , ans[0]);
+
         return Math.max(left, right) + root.val;
     }
 }

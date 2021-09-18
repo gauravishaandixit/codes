@@ -6,9 +6,9 @@ import java.util.Arrays;
 public class NQueens2 {
 
     ArrayList<ArrayList<String>> ans;
-    boolean cols[];
-    boolean diagLR[];
-    boolean diagRL[];
+    boolean[] cols;
+    boolean[] diagLR;
+    boolean[] diagRL;
 
     public ArrayList<ArrayList<String>> solveNQueens(int n) {
         ans = new ArrayList<>();
@@ -25,20 +25,17 @@ public class NQueens2 {
         return ans;
     }
 
-    void solve(char[][] board, int curr_row, int n)
-    {
-        if(curr_row == n)
-        {
+    void solve(char[][] board, int curr_row, int n) {
+        if(curr_row == n) {
             ArrayList<String> rows = new ArrayList<>();
-            for(char row[]: board)
+            for(char[] row : board)
                 rows.add(String.valueOf(row));
 
             ans.add(rows);
             return;
         }
 
-        for(int column = 0; column < n; column++)
-        {
+        for(int column = 0; column < n; column++) {
             if(cols[column] || diagLR[curr_row - column + n - 1] || diagRL[curr_row + column] )
                 continue;
 
@@ -56,18 +53,16 @@ public class NQueens2 {
         }
     }
 
-    static void printAns(ArrayList<ArrayList<String>> ans)
-    {
-        for(ArrayList<String> rows: ans)
-        {
+    static void printAns(ArrayList<ArrayList<String>> ans) {
+        for(ArrayList<String> rows: ans) {
             for(String row: rows)
                 System.out.println(row);
 
             System.out.println("\n\n");
         }
     }
-    public static void main(String[] ar)
-    {
+
+    public static void main(String[] ar) {
         ArrayList<ArrayList<String>> ans = new NQueens2().solveNQueens(4);
         printAns(ans);
     }

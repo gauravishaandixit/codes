@@ -3,7 +3,7 @@ package codes.java.tree;
 import java.util.*;
 
 public class TopView {
-    class Pair
+    static class Pair
     {
         TreeNode node;
         int hd;
@@ -16,7 +16,6 @@ public class TopView {
 
     ArrayList<Integer> topView(TreeNode root)
     {
-        ArrayList<Integer> ans = new ArrayList<>();
         Map<Integer, Integer> map = new TreeMap<>();
         Queue<Pair> q = new LinkedList<>();
         q.add(new Pair(root, 0));
@@ -34,8 +33,7 @@ public class TopView {
                 q.add(new Pair(curr.node.right, curr.hd + 1));
         }
         //System.out.println(map);
-        ans.addAll(map.values());
-        return ans;
+        return new ArrayList<>(map.values());
     }
 
     public static void main(String[] a)

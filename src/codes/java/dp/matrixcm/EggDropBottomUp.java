@@ -5,9 +5,7 @@ public class EggDropBottomUp {
     //Time Complexity:: n^2logn
     public int superEggDrop(int k, int n) {
         int[][] dp = new int[k + 1][n + 1];
-        int res = 0;
-        for(int i = 0; i <= k; i++)
-        {
+        for(int i = 0; i <= k; i++) {
             dp[i][1] = 1;
             dp[i][0] = 0;
         }
@@ -15,16 +13,13 @@ public class EggDropBottomUp {
         for(int i = 1; i <= n; i++)
             dp[1][i] = i;
 
-        for(int i = 2; i <= k; i++)
-        {
-            for(int j = 2; j <= n; j++)
-            {
+        for(int i = 2; i <= k; i++) {
+            for(int j = 2; j <= n; j++) {
                 int min = Integer.MAX_VALUE;
                 // search for k in [1, j] to minimize number of moves
                 int l = 1;
                 int r = j;
-                while (l <= r)
-                {
+                while (l <= r) {
                     int mid = l + (r - l) / 2;
                     int a = dp[i - 1][mid - 1]; // break
                     int b = dp[i][j - mid]; // did not break

@@ -6,7 +6,7 @@ import java.util.TreeMap;
 
 public class DiagonalTraversal {
 
-    ArrayList<ArrayList> diagonalTraversal(TreeNode root)
+    ArrayList<ArrayList<Integer>> diagonalTraversal(TreeNode root)
     {
 
         Map<Integer, ArrayList<Integer>> map = new TreeMap<>();
