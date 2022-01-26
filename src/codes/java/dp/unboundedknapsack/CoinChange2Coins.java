@@ -39,7 +39,7 @@ public class CoinChange2Coins {
                     minNumber[i][j] = minNumber[i-1][j];
                 }
                 else {
-                    minNumber[i][j] = Math.min(minNumber[i - 1][j], minNumber[i][j - coins[i - 1]]);
+                    minNumber[i][j] = Math.min(minNumber[i - 1][j], minNumber[i][j - coins[i - 1]] + 1);
                 }
             }
         }

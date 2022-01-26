@@ -5,7 +5,7 @@ public class IsSequence {
     {
         int m = s1.length();
         int n = s2.length();
-        int T[][] = new int[m + 1][n + 1];
+        int[][] T = new int[m + 1][n + 1];
 
         for(int i = 1; i <= m; i++)
         {
@@ -38,7 +38,7 @@ public class IsSequence {
         System.out.println(new IsSequence().isSequenceLCS("abxc", "azebdxmc"));
         System.out.println(new IsSequence().isSequenceTwoPointer("abxc", "azebdxmc"));
 
-        System.out.println(new IsSequence().isSequenceLCS("abxc", "azebdxm"));
-        System.out.println(new IsSequence().isSequenceTwoPointer("abxc", "azebdxm"));
+        System.out.println(new IsSequence().isSequenceLCS("abc", "azebdxm"));
+        System.out.println(new IsSequence().isSequenceTwoPointer("abc", "azebdxm"));
     }
 }

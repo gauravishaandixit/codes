@@ -6,8 +6,7 @@ public class MaxmSumIncrSubsequence {
         int n = arr.length;
         int[] msis = new int[n];
 
-        for(int i = 0; i < n; i++)
-            msis[i] = arr[i];
+        System.arraycopy(arr, 0, msis, 0, n);
 
         int ans = 0;
 

@@ -18,7 +18,7 @@ public class NextGreaterElement {
             st.push(i);
         }
         while(!st.isEmpty())
-            ans[st.pop()] = -1;
+            ans[st.pop()] = n;
         return ans;
     }
 

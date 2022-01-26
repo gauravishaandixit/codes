@@ -4,7 +4,7 @@ package codes.java.dp.lis;
 // [1,3,5,4,7]
 // Ans = 3, [1,3,5]
 
-public class LongestContinousIncSub {
+public class LongestContinuousIncSub {
     int lengthOfLCIS(int[] nums) {
         int res = 0, cur = 0;
 

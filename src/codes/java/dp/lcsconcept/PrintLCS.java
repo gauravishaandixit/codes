@@ -40,6 +40,6 @@ public class PrintLCS {
     }
     public static void main(String[] args)
     {
-        System.out.println(", LCS:: "+new PrintLCS().printLCS("abcgdef","afbgcfef"));
+        System.out.println(", LCS:: " + new PrintLCS().printLCS("abcgdef","afbgcfef"));
     }
 }

@@ -25,7 +25,7 @@ public class SubsetSum {
     }
     public static void main(String[] args)
     {
-        int set[] = new int[]{1, 2, 4, 5, 7};
+        int[] set = new int[]{1, 2, 4, 5, 7};
         int S = 8;
         System.out.println(new SubsetSum().subsetSum(set, S));
 

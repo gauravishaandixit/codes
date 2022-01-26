@@ -12,7 +12,7 @@ public class EqualSumPartition {
         int sum = totalSum >> 1;
         int n = arr.length;
 
-        boolean T[][] = new boolean[n + 1][sum + 1];
+        boolean[][] T = new boolean[n + 1][sum + 1];
         for(int i = 0; i <= n; i++)
             T[i][0] = true;
 
@@ -34,7 +34,7 @@ public class EqualSumPartition {
 
     public static void main(String[] args)
     {
-        int set[] = new int[]{1, 2, 4, 5, 7};
+        int[] set = new int[]{1, 2, 4, 5, 7};
         System.out.println(new EqualSumPartition().equalPartition(set));
         set = new int[]{1, 5, 5, 11};
         System.out.println(new EqualSumPartition().equalPartition(set));
