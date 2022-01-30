@@ -19,32 +19,27 @@ public class AggressiveCows {
         int high = A.get(n - 1) - A.get(0);
 
         int ans = 0;
-        while(low <= high)
-        {
-            int mid = low + (high - low)/2;
-            if(isPossible(A, B, mid))
-            {
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (isPossible(A, B, mid)) {
                 ans = mid;
                 low = mid + 1;
-            }
-            else
+            } else
                 high = mid - 1;
         }
         return ans;
     }
-    boolean isPossible(ArrayList<Integer> arr, int cows, int maxDistance)
-    {
+
+    boolean isPossible(ArrayList<Integer> arr, int cows, int maxDistance) {
         int numCows = 1;
         int prevCowPos = 0;
 
-        for(int i = 1; i < arr.size(); i++)
-        {
-            if(arr.get(i) - arr.get(prevCowPos) >= maxDistance)
-            {
+        for (int i = 1; i < arr.size(); i++) {
+            if (arr.get(i) - arr.get(prevCowPos) >= maxDistance) {
                 numCows++;
                 prevCowPos = i;
             }
-            if(numCows == cows)
+            if (numCows == cows)
                 return true;
         }
         return false;

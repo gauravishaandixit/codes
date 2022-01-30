@@ -38,7 +38,7 @@ public class AlienDictionary {
             if(vis[i] == 0)
                 dfs(graph, (char)(i + 'a'), vis, order);
         }
-        System.out.println(order);
+//        System.out.println(order);
 
         char[] ans = new char[k];
         int i = 0;

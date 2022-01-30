@@ -7,15 +7,21 @@ public class VerifyPreorderSequence {
         int root = Integer.MIN_VALUE;
         Stack<Integer> st = new Stack<>();
 
-        for(int i = 0; i < pre.length; i++)
-        {
-            if(root > pre[i])
+        for (int j : pre) {
+            // If we find a node who is on right side
+            // and smaller than root, return false
+            if (j < root)
                 return false;
 
-            while(!st.isEmpty() && st.peek() < pre[i])
+            // If pre[i] is in right subtree of stack top,
+            // Keep removing items smaller than pre[i]
+            // and make the last removed item as new root.
+            while (!st.isEmpty() && st.peek() < j)
                 root = st.pop();
-            //System.out.println(root);
-            st.push(pre[i]);
+
+            // At this point either stack is empty or
+            // pre[i] is smaller than root, push pre[i]
+            st.push(j);
         }
         return true;
     }

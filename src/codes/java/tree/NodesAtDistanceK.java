@@ -4,10 +4,9 @@ import java.util.*;
 
 public class NodesAtDistanceK {
 
-    ArrayList<TreeNode> nodesAtKDistance(TreeNode root, TreeNode start, int k)
-    {
+    ArrayList<TreeNode> nodesAtKDistance(TreeNode root, TreeNode start, int k) {
         ArrayList<TreeNode> ans = new ArrayList<>();
-        if(root == null)
+        if (root == null)
             return ans;
 
         HashMap<TreeNode, TreeNode> parMap = new HashMap<>();
@@ -20,23 +19,20 @@ public class NodesAtDistanceK {
 
         int currLev = 0;
 
-        while(!q.isEmpty())
-        {
+        while (!q.isEmpty()) {
             int size = q.size();
-            while(size --> 0)
-            {
+            while (size-- > 0) {
                 TreeNode curr = q.poll();
-                if(currLev == k)
+                if (currLev == k)
                     ans.add(curr);
-                else
-                {
-                    if(curr.left != null && vis.add(curr.left))
+                else {
+                    if (curr.left != null && vis.add(curr.left))
                         q.add(curr.left);
 
-                    if(curr.right != null && vis.add(curr.right))
+                    if (curr.right != null && vis.add(curr.right))
                         q.add(curr.right);
 
-                    if(parMap.get(curr) != null && vis.add(parMap.get(curr)))
+                    if (parMap.get(curr) != null && vis.add(parMap.get(curr)))
                         q.add(parMap.get(curr));
                 }
             }
@@ -45,9 +41,8 @@ public class NodesAtDistanceK {
         return ans;
     }
 
-    void parentMapping(TreeNode child, TreeNode parent, HashMap<TreeNode, TreeNode> parMap)
-    {
-        if(child == null)
+    void parentMapping(TreeNode child, TreeNode parent, HashMap<TreeNode, TreeNode> parMap) {
+        if (child == null)
             return;
 
         parMap.put(child, parent);

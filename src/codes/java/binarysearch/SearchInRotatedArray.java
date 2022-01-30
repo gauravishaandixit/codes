@@ -36,7 +36,7 @@ public class SearchInRotatedArray {
     }
     public static void main(String[] args)
     {
-        ArrayList<Integer> arr = new ArrayList();
+        ArrayList<Integer> arr = new ArrayList<>();
         for(int i = 9; i >= 5; i--)
             arr.add(i);
 

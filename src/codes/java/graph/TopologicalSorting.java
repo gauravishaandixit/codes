@@ -14,7 +14,7 @@ public class TopologicalSorting {
         for(int[] edge : edges)
             graph.get(edge[0]).add(edge[1]);
 
-        System.out.println(graph);
+//        System.out.println(graph);
 
         int[] vis = new int[n];
 

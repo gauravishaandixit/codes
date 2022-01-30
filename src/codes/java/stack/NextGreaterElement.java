@@ -4,33 +4,30 @@ package codes.java.stack;
 import java.util.Stack;
 
 public class NextGreaterElement {
-    int[] nge(int[] arr)
-    {
+    int[] nge(int[] arr) {
         int n = arr.length;
         Stack<Integer> st = new Stack<>();
         int[] ans = new int[n];
 
-        for(int i = 0; i < n; i++)
-        {
-            while(!st.isEmpty() && arr[i] > arr[st.peek()])
+        for (int i = 0; i < n; i++) {
+            while (!st.isEmpty() && arr[i] > arr[st.peek()])
                 ans[st.pop()] = i;
 
             st.push(i);
         }
-        while(!st.isEmpty())
+        while (!st.isEmpty())
             ans[st.pop()] = n;
         return ans;
     }
 
-    static void printArray(int[] arr)
-    {
-        for(int a: arr)
+    static void printArray(int[] arr) {
+        for (int a : arr)
             System.out.print(a + " ");
 
         System.out.print("\n");
     }
-    public static void main(String[] ar)
-    {
+
+    public static void main(String[] ar) {
         int[] arr = new int[]{1, 2, 3, 4, 5, 6};
         int[] ans = new NextGreaterElement().nge(arr);
         printArray(ans);
