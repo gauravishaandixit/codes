@@ -1,0 +1,2 @@
+register Devans
+register_property Devans abc 3000000-7000000 2000 3 Banglore SELL

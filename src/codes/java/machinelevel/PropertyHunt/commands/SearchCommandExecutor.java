@@ -4,7 +4,7 @@ import codes.java.machinelevel.PropertyHunt.model.Command;
 import codes.java.machinelevel.PropertyHunt.service.PropertyHuntService;
 
 public class SearchCommandExecutor extends CommandExecutor{
-    public static String COMMAND_NAME = "shortlist";
+    public static String COMMAND_NAME = "search";
 
     public SearchCommandExecutor(PropertyHuntService propertyHuntService) {
         super(propertyHuntService);
