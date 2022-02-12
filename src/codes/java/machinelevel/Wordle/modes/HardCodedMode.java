@@ -15,6 +15,9 @@ public class HardCodedMode extends Mode{
 
     @Override
     public void process() {
+
+        System.out.println("===================== Hardcoded Mode =====================");
+
         wordleService.addNewWord("APPLE", 5);
         wordleService.addNewWord("FLOOD", 5);
         wordleService.addNewWord("FLIPKART", 8);

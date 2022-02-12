@@ -21,10 +21,12 @@ public class InteractiveMode extends Mode{
             while (true) {
                 final String input = reader.readLine();
                 final Command command = new Command(input);
-                processCommand(command);
+
                 if (command.getCommandName().equalsIgnoreCase("exit")) {
                     System.exit(0);
                 }
+
+                processCommand(command);
             }
         } catch (Exception e) {
             System.out.println(e);

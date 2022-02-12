@@ -29,7 +29,7 @@ public class CurrentRound {
         }
 
         if (guess.length() != word.length()) {
-            System.out.println("Invalid Guess. Not Equal Length");
+            System.out.println("Invalid Guess. Unequal Length");
         } else {
             if (guesses.get(user).size() >= noOfGuesses) {
                 System.out.println("Err!!!, [" + user + "] Out Of Guesses");
@@ -55,7 +55,7 @@ public class CurrentRound {
             if (chWord == chGuess) {
                 sb.append("C");
             } else {
-                if(word.lastIndexOf(chGuess) != -1) {
+                if (word.lastIndexOf(chGuess) != -1) {
                     sb.append("P");
                 } else {
                     sb.append("I");
@@ -70,9 +70,10 @@ public class CurrentRound {
     }
 
     void print(List<String> guesses) {
-        for(String guess: guesses) {
+        for (String guess : guesses) {
             System.out.println(guess);
         }
         System.out.println();
     }
+
 }

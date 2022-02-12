@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Users {
+
     Map<String, Double> users;
 
     public Users() {

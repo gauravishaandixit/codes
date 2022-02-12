@@ -19,6 +19,7 @@ public class FileMode extends Mode{
 
     @Override
     public void process() {
+        System.out.println("===================== File Mode =====================");
         final File file = new File(fileName);
         final BufferedReader reader;
         try {
