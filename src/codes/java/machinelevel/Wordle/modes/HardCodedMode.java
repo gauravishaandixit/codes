@@ -1,11 +1,16 @@
 package codes.java.machinelevel.Wordle.modes;
 
+import codes.java.machinelevel.Wordle.commandexecutors.CommandExecutorFactory;
 import codes.java.machinelevel.Wordle.services.WordleService;
 
 public class HardCodedMode extends Mode{
 
-    public HardCodedMode(WordleService wordleService) {
-        super(wordleService);
+    private final WordleService wordleService;
+
+    public HardCodedMode(WordleService wordleService, CommandExecutorFactory commandExecutorFactory) {
+        super(commandExecutorFactory);
+
+        this.wordleService = wordleService;
     }
 
     @Override

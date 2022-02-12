@@ -1,15 +1,15 @@
 package codes.java.machinelevel.Wordle.modes;
 
+import codes.java.machinelevel.Wordle.commandexecutors.CommandExecutorFactory;
 import codes.java.machinelevel.Wordle.models.Command;
-import codes.java.machinelevel.Wordle.services.WordleService;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class InteractiveMode extends Mode{
 
-    public InteractiveMode(WordleService wordleService) {
-        super(wordleService);
+    public InteractiveMode(CommandExecutorFactory commandExecutorFactory) {
+        super(commandExecutorFactory);
     }
 
     @Override

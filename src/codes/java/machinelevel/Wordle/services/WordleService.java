@@ -26,7 +26,7 @@ public class WordleService {
         if(result) {
             System.out.println("\nUser [" + name + "] has registered.");
         } else {
-            System.out.println("\nUser [\" + name + \"] was not registered.");
+            System.out.println("\nUser [" + name + "] was not registered.");
         }
     }
 
@@ -83,13 +83,19 @@ public class WordleService {
     public void guessWord(String userName, String guess) {
         userName = userName.toUpperCase();
         guess = guess.toUpperCase();
+
+        if(!users.validUser(userName)) {
+            System.out.println("User [" + userName + "] has not registered.");
+            return;
+        }
+
         if (!checkValidRound()) {
-            System.out.println("Game Not Started Yet");
+            System.out.println("Game Has Not Started Yet");
             return;
         }
 
         if (!words.checkIfWordIsPresent(guess)) {
-            System.out.println("Invalid Word");
+            System.out.println("Invalid guess. [" + guess + "] is not present in dictionary");
             return;
         }
 

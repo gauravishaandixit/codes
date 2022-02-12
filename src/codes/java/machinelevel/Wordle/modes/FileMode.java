@@ -1,5 +1,6 @@
 package codes.java.machinelevel.Wordle.modes;
 
+import codes.java.machinelevel.Wordle.commandexecutors.CommandExecutorFactory;
 import codes.java.machinelevel.Wordle.models.Command;
 import codes.java.machinelevel.Wordle.services.WordleService;
 
@@ -11,8 +12,8 @@ import java.io.FileReader;
 public class FileMode extends Mode{
     private final String fileName;
 
-    public FileMode(WordleService wordleService, String fileName) {
-        super(wordleService);
+    public FileMode(CommandExecutorFactory commandExecutorFactory, String fileName) {
+        super(commandExecutorFactory);
         this.fileName = fileName;
     }
 

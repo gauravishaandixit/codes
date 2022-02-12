@@ -30,4 +30,9 @@ public class Users {
     public Map<String, Double> getScores() {
         return users;
     }
+
+    public boolean validUser(String name) {
+        return users.containsKey(name);
+    }
+
 }

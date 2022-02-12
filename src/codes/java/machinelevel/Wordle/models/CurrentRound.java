@@ -24,15 +24,15 @@ public class CurrentRound {
         currentRoundScores.putIfAbsent(user, 0.0);
 
         if (currentRoundScores.get(user) > 0.0) {
-            System.out.println("Already Played This Round");
+            System.out.println("[" + user + "] Already Played This Round");
             return;
         }
 
         if (guess.length() != word.length()) {
             System.out.println("Invalid Guess. Not Equal Length");
         } else {
-            if (guesses.get(user).size() > noOfGuesses) {
-                System.out.println("Err!!!, Out Of Guesses");
+            if (guesses.get(user).size() >= noOfGuesses) {
+                System.out.println("Err!!!, [" + user + "] Out Of Guesses");
                 return;
             }
 

@@ -1,0 +1,18 @@
+add_word APPLE 5
+add_word MAPLE 5
+add_word FLOOD 5
+add_word APPLE 5
+register_user Gaurav
+register_user Dixit
+new_game
+guess Gaurav APPLE
+guess DIXIT MAPLE
+current_scores
+guess Gaurav APPLE
+guess Gaurav flipkart
+guess Gaurav APPLE
+guess DIXIT MAPLE
+guess Abhishek MAPLE
+guess Gaurav APPLE
+guess Gaurav MAPLE
+total_scores
