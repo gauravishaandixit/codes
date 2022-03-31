@@ -4,8 +4,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class DaySlot {
-    String date;
-    List<Slot> slotList;
+    private String date;
+    private List<Slot> slotList;
+
+    public DaySlot() {
+    }
+
+    public DaySlot(String date, List<Slot> slotList) {
+        this.date = date;
+        this.slotList = slotList;
+    }
 
     public String getDate() {
         return date;
@@ -35,4 +43,5 @@ public class DaySlot {
     public int hashCode() {
         return Objects.hash(date);
     }
+
 }

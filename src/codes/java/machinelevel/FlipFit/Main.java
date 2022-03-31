@@ -10,6 +10,8 @@ public class Main {
         flipFitService.register("user2");
         flipFitService.register("user3");
 
-
+        flipFitService.addNewSpace("Marathalli");
+        flipFitService.addNewSpace("Belandur");
+        flipFitService.addNewSpace("Marathalli");
     }
 }

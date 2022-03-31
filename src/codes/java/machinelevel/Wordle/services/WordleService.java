@@ -50,7 +50,7 @@ public class WordleService {
         addWaitListedWords();
 
         Word word = words.selectRandomWord();
-        word = new Word("MAPLE", 5);
+        word = new Word("APPLE", 5);
         currentRound = new CurrentRound(word.getValue(), word.getLevel());
 
         System.out.println("Today's Word :" + word.getValue());
@@ -162,4 +162,5 @@ public class WordleService {
         }
         waitListedWords.clear();
     }
+
 }

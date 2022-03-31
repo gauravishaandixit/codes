@@ -3,6 +3,7 @@ package codes.java.heap;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class MinimumCostToHireKWorkers {
@@ -12,7 +13,7 @@ public class MinimumCostToHireKWorkers {
             arr.add(new Worker(quality[i], wage[i]));
         }
         
-        Collections.sort(arr, (a, b) -> Double.compare(a.ratio, b.ratio));
+        Collections.sort(arr, Comparator.comparingDouble(a -> a.ratio));
         
         PriorityQueue<Worker> maxHeap = new PriorityQueue<>((a, b) -> b.quality - a.quality);
         double ans = 1e9;

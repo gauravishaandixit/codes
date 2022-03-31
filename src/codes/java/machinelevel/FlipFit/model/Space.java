@@ -21,4 +21,5 @@ public class Space {
     public int hashCode() {
         return Objects.hash(location);
     }
+
 }

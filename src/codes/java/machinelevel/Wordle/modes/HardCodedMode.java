@@ -56,4 +56,5 @@ public class HardCodedMode extends Mode{
 
         wordleService.getAllRoundScores();
     }
+
 }

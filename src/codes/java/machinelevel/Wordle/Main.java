@@ -40,4 +40,5 @@ public class Main {
     static private boolean isFileMode(String[] args) {
         return args.length == 1;
     }
+
 }

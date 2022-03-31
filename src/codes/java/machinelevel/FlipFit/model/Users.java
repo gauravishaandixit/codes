@@ -13,4 +13,5 @@ public class Users {
     public boolean addNewUser(String name) {
         return userSet.add(new User(name));
     }
+
 }

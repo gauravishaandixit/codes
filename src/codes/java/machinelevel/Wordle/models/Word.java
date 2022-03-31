@@ -42,4 +42,5 @@ public class Word {
     public int hashCode() {
         return Objects.hash(value, level);
     }
+
 }

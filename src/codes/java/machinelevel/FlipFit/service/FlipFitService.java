@@ -5,6 +5,7 @@ import codes.java.machinelevel.FlipFit.model.FlipFitSlots;
 import codes.java.machinelevel.FlipFit.model.Users;
 
 public class FlipFitService {
+
     BookedSlots bookedSlots;
     Users users;
     FlipFitSlots flipFitSlots;
@@ -16,14 +17,16 @@ public class FlipFitService {
     }
 
     public void register(String name) {
+        name = name.toUpperCase();
         if(users.addNewUser(name)) {
-            System.out.println("User is added.");
+            System.out.println("User [" + name + "] is added.");
         } else {
-            System.out.println("User was not added.");
+            System.out.println("User [" + name + "] was not added.");
         }
     }
 
     public void viewWorkoutDetails(String location, String date) {
+
     }
 
     public void bookSlot(String userName, String location, String date, String time) {
@@ -32,6 +35,15 @@ public class FlipFitService {
 
     public void viewWorkoutPlan(String userName, String date) {
 
+    }
+
+    public void addNewSpace(String spaceName) {
+        boolean result = flipFitSlots.addNewSpace(spaceName);
+        if(result) {
+            System.out.println("Space [" + spaceName + "] was added.");
+        } else {
+            System.out.println("Space [" + spaceName + "] was not added.");
+        }
     }
 
 }
